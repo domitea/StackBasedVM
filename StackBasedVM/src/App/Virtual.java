@@ -10,6 +10,7 @@ import java.util.ArrayDeque;
  */
 public class Virtual {
 	private ArrayDeque<Integer> FIFO = new ArrayDeque<Integer>();
+	private boolean run = true;
 
 	public void execute(String[] args) {
 		for (String arg : args) {
@@ -17,14 +18,16 @@ public class Virtual {
 			{
 				int e = Integer.valueOf(arg);
 				FIFO.addFirst(e);
-				//System.out.println(FIFO.toString());
+				System.out.println(FIFO.toString());
 			} else {
 				KeyWords key = KeyWords.valueOf(arg.toUpperCase());
 				switch (key) {
 				case PRINT:
-					System.out.println(FIFO.toString());
+					System.out.println(FIFO.getFirst());
 					break;
-
+				
+				case QUIT:
+					run = false;
 				default:
 					break;
 				}
@@ -42,6 +45,11 @@ public class Virtual {
 	}
 	
 	private enum KeyWords {
-		PRINT
+		PRINT,
+		QUIT,
+	}
+	
+	public boolean isRun() {
+		return run;
 	}
 }
