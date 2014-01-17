@@ -19,9 +19,14 @@ public class Virtual {
 				FIFO.addFirst(e);
 				//System.out.println(FIFO.toString());
 			} else {
-				arg.toLowerCase();
-				if (arg.equals("print")) {
+				KeyWords key = KeyWords.valueOf(arg.toUpperCase());
+				switch (key) {
+				case PRINT:
 					System.out.println(FIFO.toString());
+					break;
+
+				default:
+					break;
 				}
 			}
 		}
@@ -34,5 +39,9 @@ public class Virtual {
 			return false;
 		}
 		return true;
+	}
+	
+	private enum KeyWords {
+		PRINT
 	}
 }
