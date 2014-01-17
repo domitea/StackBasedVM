@@ -19,7 +19,7 @@ Commands
 + Minus - -
 + Multiplication - *
 + Division - *
-+ Sqare root - SQRT
++ Square root - SQRT
 + Duplicate first member - DUP
 + Swap first and second member - SWAP
 + Print first member of stack - .
