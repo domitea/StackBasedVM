@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * @author Dominik Matoulek
- *  Pokus o emulator zasobnikoveho pocitace programovatelneho pomoci Forthu
+ *  Try of Forth scripting Stack-based VM
  */
 public class Machine {
 	

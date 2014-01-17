@@ -5,7 +5,7 @@ package App;
 
 /**
  * @author Dominik Matoulek
- *	Samotne VM emulatoru
+ *	Whole VM of emulator
  */
 public class Virtual {
 	
