@@ -31,3 +31,9 @@ If we want add 2 to 5 and show result, syntax will be:
 Result is:
 
 7
+
+Future
+===========
+
++ Add more mathematics commands
++ Define macros (like Forth or Lisp)
