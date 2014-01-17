@@ -18,7 +18,8 @@ public class Machine {
 		Scanner scan = new Scanner(System.in);
 		exp = scan.nextLine();
 		exps = exp.split(" ");
-		
+		Virtual VM = new Virtual();
+		VM.execute(exps);
 	}
 
 	/**
