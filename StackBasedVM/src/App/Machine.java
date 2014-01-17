@@ -18,17 +18,7 @@ public class Machine {
 		Scanner scan = new Scanner(System.in);
 		exp = scan.nextLine();
 		exps = exp.split(" ");
-		for (String s: exps)
-		{
-			if (isNumeric(s))
-			{
-				System.out.println("Cislo - " + s);
-			}
-			else
-			{
-				System.out.println("Prikaz - " + s);
-			}
-		}
+		
 	}
 
 	/**
@@ -36,15 +26,6 @@ public class Machine {
 	 */
 	public static void main(String[] args) {
 		new Machine();
-	}
-	
-	private boolean isNumeric(String str)
-	{
-	    for (char c : str.toCharArray())
-	    {
-	        if (!Character.isDigit(c)) return false;
-	    }
-	    return true;
 	}
 
 }
