@@ -48,5 +48,5 @@ Result is:
 Future
 ===========
 
-- [ ] Add more mathematics commands
-- [ ] Define macros (like Forth or Lisp)
++ Add more mathematics commands
++ Define macros (like Forth or Lisp)
