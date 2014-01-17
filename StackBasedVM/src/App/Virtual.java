@@ -18,18 +18,34 @@ public class Virtual {
 			{
 				int e = Integer.valueOf(arg);
 				FIFO.addFirst(e);
-				System.out.println(FIFO.toString());
 			} else {
-				KeyWords key = KeyWords.valueOf(arg.toUpperCase());
-				switch (key) {
-				case PRINT:
+				if (arg.toUpperCase().equals("+"))
+				{
+					int b = FIFO.pop();
+					int a = FIFO.pop();
+					FIFO.addFirst(a+b);
+				}
+				else if (arg.toUpperCase().equals("-"))
+				{
+					int b = FIFO.pop();
+					int a = FIFO.pop();
+					FIFO.addFirst(a-b);
+				}
+				else if (arg.toUpperCase().equals("*"))
+				{
+					int b = FIFO.pop();
+					int a = FIFO.pop();
+					FIFO.addFirst(a*b);
+				}
+				else if (arg.toUpperCase().equals("/"))
+				{
+					int b = FIFO.pop();
+					int a = FIFO.pop();
+					FIFO.addFirst(a/b);
+				}
+				else if (arg.toUpperCase().equals("."))
+				{
 					System.out.println(FIFO.getFirst());
-					break;
-				
-				case QUIT:
-					run = false;
-				default:
-					break;
 				}
 			}
 		}
@@ -42,11 +58,6 @@ public class Virtual {
 			return false;
 		}
 		return true;
-	}
-	
-	private enum KeyWords {
-		PRINT,
-		QUIT,
 	}
 	
 	public boolean isRun() {
