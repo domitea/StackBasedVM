@@ -9,7 +9,7 @@ import java.util.ArrayDeque;
  * @author Dominik Matoulek Whole VM of emulator
  */
 public class Virtual {
-	private ArrayDeque<Integer> FIFO = new ArrayDeque<Integer>();
+	private ArrayDeque<Integer> stack = new ArrayDeque<Integer>();
 	private boolean run = true;
 
 	public void execute(String[] args) {
@@ -17,61 +17,61 @@ public class Virtual {
 			if (isNumber(arg)) // is string number?
 			{
 				int e = Integer.valueOf(arg);
-				FIFO.addFirst(e);
+				stack.addFirst(e);
 			} else {
 				if (arg.toUpperCase().equals("+"))
 				{
-					int b = FIFO.pop();
-					int a = FIFO.pop();
-					FIFO.addFirst(a+b);
+					int b = stack.pop();
+					int a = stack.pop();
+					stack.addFirst(a+b);
 				}
 				else if (arg.toUpperCase().equals("-"))
 				{
-					int b = FIFO.pop();
-					int a = FIFO.pop();
-					FIFO.addFirst(a-b);
+					int b = stack.pop();
+					int a = stack.pop();
+					stack.addFirst(a-b);
 				}
 				else if (arg.toUpperCase().equals("*"))
 				{
-					int b = FIFO.pop();
-					int a = FIFO.pop();
-					FIFO.addFirst(a*b);
+					int b = stack.pop();
+					int a = stack.pop();
+					stack.addFirst(a*b);
 				}
 				else if (arg.toUpperCase().equals("/")) 
 				{
-					int b = FIFO.pop();
-					int a = FIFO.pop();
-					FIFO.addFirst(a/b);
+					int b = stack.pop();
+					int a = stack.pop();
+					stack.addFirst(a/b);
 				}
 				else if (arg.toUpperCase().equals("SWAP")) // First -> Second and Second -> First
 				{
-					int b = FIFO.pop();
-					int a = FIFO.pop();
-					FIFO.addFirst(b);
-					FIFO.addFirst(a);
+					int b = stack.pop();
+					int a = stack.pop();
+					stack.addFirst(b);
+					stack.addFirst(a);
 				}
 				else if (arg.toUpperCase().equals("DUP")) // duplicate
 				{
-					int a = FIFO.pop();
-					FIFO.addFirst(a);
-					FIFO.addFirst(a);
+					int a = stack.pop();
+					stack.addFirst(a);
+					stack.addFirst(a);
 				}
 				else if (arg.toUpperCase().equals("SQRT")) // Square root
 				{
-					int a = FIFO.pop();
-					FIFO.addFirst((int) Math.round(Math.sqrt(a)));
+					int a = stack.pop();
+					stack.addFirst((int) Math.round(Math.sqrt(a)));
 				}
 				else if (arg.toUpperCase().equals("CLEAR")) // Clear Stack
 				{
-					FIFO.clear();
+					stack.clear();
 				}
 				else if (arg.toUpperCase().equals("PRINT")) // Print Stack
 				{
-					System.out.println(FIFO.toString());
+					System.out.println(stack.toString());
 				}
 				else if (arg.toUpperCase().equals(".")) // Print first member of Stack
 				{
-					System.out.println(FIFO.getFirst());
+					System.out.println(stack.getFirst());
 				}
 			}
 		}
