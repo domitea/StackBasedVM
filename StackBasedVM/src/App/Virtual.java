@@ -61,17 +61,13 @@ public class Virtual {
 					int a = stack.pop();
 					stack.addFirst((int) Math.round(Math.sqrt(a)));
 				}
-				else if (arg.toUpperCase().equals("CLEAR")) // Clear Stack
+				else if (arg.toUpperCase().equals("CLR")) // Clear Stack
 				{
 					stack.clear();
 				}
-				else if (arg.toUpperCase().equals("PRINT")) // Print Stack
-				{
-					System.out.println(stack.toString());
-				}
 				else if (arg.toUpperCase().equals(".")) // Print first member of Stack
 				{
-					System.out.println(stack.getFirst());
+					System.out.println(stack.pop());
 				}
 			}
 		}
