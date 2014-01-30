@@ -43,6 +43,10 @@ public class Virtual {
 					int a = stack.pop();
 					stack.addFirst(a/b);
 				}
+				else if (arg.toUpperCase().equals("PRINT")) // print whole stack
+				{
+					System.out.println(stack.toString());
+				}
 				else if (arg.toUpperCase().equals("SWAP")) // First -> Second and Second -> First
 				{
 					int b = stack.pop();
@@ -68,6 +72,108 @@ public class Virtual {
 				else if (arg.toUpperCase().equals(".")) // Print first member of Stack
 				{
 					System.out.println(stack.pop());
+				}
+				else if (arg.toUpperCase().equals("<")) // Is a smaller than b ? If is, write 1. If not, write 0
+				{
+					int a = stack.pop();
+					int b = stack.pop();
+					if (b < a)
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(1);
+					}
+					else
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(0);
+					}
+				}
+				else if (arg.toUpperCase().equals("<="))
+				{
+					int a = stack.pop();
+					int b = stack.pop();
+					if (b <= a)
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(1);
+					}
+					else
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(0);
+					}
+				}
+				else if (arg.toUpperCase().equals(">"))
+				{
+					int a = stack.pop();
+					int b = stack.pop();
+					if (b > a)
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(1);
+					}
+					else
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(0);
+					}
+				}
+				else if (arg.toUpperCase().equals("=>"))
+				{
+					int a = stack.pop();
+					int b = stack.pop();
+					if (b >= a)
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(1);
+					}
+					else
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(0);
+					}
+				}
+				else if (arg.toUpperCase().equals("=="))
+				{
+					int a = stack.pop();
+					int b = stack.pop();
+					if (b == a)
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(1);
+					}
+					else
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(0);
+					}
+				}
+				else if (arg.toUpperCase().equals("/=")) // I like Prolog :)
+				{
+					int a = stack.pop();
+					int b = stack.pop();
+					if (b != a)
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(1);
+					}
+					else
+					{
+						stack.addFirst(a);
+						stack.addFirst(b);
+						stack.addFirst(0);
+					}
 				}
 			}
 		}
