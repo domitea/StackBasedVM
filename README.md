@@ -61,6 +61,8 @@ Result is:
 
 1
 
+NOTE: Members are not deleted, because it is only compare :)
+
 Future
 ===========
 
