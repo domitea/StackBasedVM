@@ -23,7 +23,9 @@ Commands
 + Duplicate first member - DUP
 + Swap first and second member - SWAP
 + Print and remove first member of stack - .
++ Print of whole stack - PRINT
 + Clear stack - CLR
++ Compare operators - <, >, <=, =>, ==, /=
 
 Examples
 ============
@@ -43,6 +45,21 @@ Example of Pythagoras for 3 and 4:
 Result is: 
 
 5
+
+Compare operators
+=======================
+
+Compare operators works little different. If operator is true, add to stack 1. If operator is false, add to stack 0
+
+Example:
+
+2 3 < .
+
+Is 2 smaller than 3? Yes, It is.
+
+Result is:
+
+1
 
 Future
 ===========
